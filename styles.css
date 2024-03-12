@@ -103,7 +103,7 @@ main {
   transition: transform 0.3s;
 }
 
-.topic .title:hover {
+.topic:hover .title {
   transition: background-color 0.3s;
   background-color: #f5f5f5;
 }
