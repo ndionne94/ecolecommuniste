@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Josefin Sans;
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
@@ -30,8 +30,23 @@ a {
   color: inherit;
 }
 
-h2 {
+h1,
+h2,
+h4 {
   margin-top: 0;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 32pt;
+}
+
+h4 {
+  color: #555;
 }
 
 main {
@@ -40,6 +55,37 @@ main {
 
 .container {
   max-width: 1200px;
+}
+
+.countdown-container {
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s; /* Smooth transition for opacity */
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.about img {
+  max-width: 100%;
+  height: auto;
+}
+
+.unit {
+  display: inline-block;
+  font-size: 24px;
+  margin: 0 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.value {
+  font-size: 48px;
+  font-weight: 200;
 }
 
 .section-title {

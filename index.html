@@ -11,7 +11,7 @@
       <nav class="navigation">
         <ul class="nav-items">
           <li class="nav-item"><a href="#schedule">Horaire</a></li>
-          <li class="nav-item"><a href="#topics">Ateliers</a></li>
+          <li class="nav-item"><a href="#topics">Séances</a></li>
           <li class="nav-item"><a href="#register">S'inscrire</a></li>
         </ul>
         <a class="nav-action" href="https://marxiste.qc.ca/rejoindre">
@@ -20,15 +20,91 @@
       </nav>
     </header>
     <main>
+      <script>
+        var eventDate = new Date(2024, 7, 1, 18, 0, 0); // August 1, 2024, 6:00 PM
+
+        function updateCountdown() {
+          var currentDate = new Date();
+          var difference = eventDate - currentDate;
+
+          if (difference <= 0) {
+            document.getElementById("countdown").innerHTML =
+              "L'événement est en cours !";
+          } else {
+            var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            var hours = Math.floor(
+              (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            var minutes = Math.floor(
+              (difference % (1000 * 60 * 60)) / (1000 * 60)
+            );
+            var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+          }
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        function revealTimer() {
+          var countdownContainer = document.getElementById(
+            "countdown-container"
+          );
+          var opacity = 0;
+          var intervalId = setInterval(function () {
+            if (opacity >= 1) {
+              clearInterval(intervalId);
+            } else {
+              opacity += 0.1;
+              countdownContainer.style.opacity = opacity;
+            }
+          }, 50);
+        }
+        window.addEventListener("load", revealTimer);
+      </script>
       <div class="container">
-        <h1 class="section-title">Ateliers</h1>
+        <div class="countdown-container" id="countdown-container">
+          <h1>L'ÉCOLE COMMUNISTE DE QUÉBEC</h1>
+          <h4>10 et 11 août 2024</h4>
+          <div id="countdown">
+            <div class="unit">
+              <div id="days" class="value">0</div>
+              <div class="label">jours</div>
+            </div>
+            <div class="unit">
+              <div id="hours" class="value">0</div>
+              <div class="label">heures</div>
+            </div>
+            <div class="unit">
+              <div id="minutes" class="value">0</div>
+              <div class="label">minutes</div>
+            </div>
+            <div class="unit">
+              <div id="seconds" class="value">0</div>
+              <div class="label">secondes</div>
+            </div>
+          </div>
+          <div class="about">
+            <h2>
+              « Pas de mouvement révolutionnaire sans théorie révolutionnaire.
+              »<br /><br />
+              - Lénine
+            </h2>
+            <img src="./assets/lenin-about.png" />
+          </div>
+        </div>
+
+        <h1 class="section-title">Séances</h1>
         <section id="topics">
           <div
             class="topic"
-            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','Un atelier')"
+            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','une séance')"
           >
             <div class="title">
-              <h2>UN ATELIER</h2>
+              <h2>une séance</h2>
             </div>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg"
@@ -36,10 +112,10 @@
           </div>
           <div
             class="topic"
-            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','Un atelier')"
+            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','une séance')"
           >
             <div class="title">
-              <h2>UN ATELIER</h2>
+              <h2>une séance</h2>
             </div>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg"
@@ -47,10 +123,10 @@
           </div>
           <div
             class="topic"
-            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','Un atelier')"
+            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','une séance')"
           >
             <div class="title">
-              <h2>UN ATELIER</h2>
+              <h2>une séance</h2>
             </div>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg"
@@ -58,10 +134,10 @@
           </div>
           <div
             class="topic"
-            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','Un atelier')"
+            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','une séance')"
           >
             <div class="title">
-              <h2>UN ATELIER</h2>
+              <h2>une séance</h2>
             </div>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg"
@@ -69,10 +145,10 @@
           </div>
           <div
             class="topic"
-            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','Un atelier')"
+            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','une séance')"
           >
             <div class="title">
-              <h2>UN ATELIER</h2>
+              <h2>une séance</h2>
             </div>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg"
@@ -80,10 +156,10 @@
           </div>
           <div
             class="topic"
-            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','Un atelier')"
+            onclick="openModal('Joel a une belle casquette Joel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquetteJoel a une belle casquette','https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg','une séance')"
           >
             <div class="title">
-              <h2>UN ATELIER</h2>
+              <h2>une séance</h2>
             </div>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Vladimir_Lenin.jpg/330px-Vladimir_Lenin.jpg"
